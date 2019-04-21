@@ -8,6 +8,10 @@ router.get('/', async function (req, res, next) {
         res.send(JSON.stringify(data));
 });
 
+router.get('/home', function (req,res) {
+    res.send("Hello from Backend")
+});
+
 router.get('/filedagainst', cors({origin: 'http://localhost:8080'}), async function (req, res, next) {
     const data = await ticketTable.getFiledAgainstChartData();
     res.send(JSON.stringify(data));
